@@ -1,40 +1,40 @@
-name: Test in Docker Container
+# name: Test in Docker Container
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Set environment variables
-        run: |
+#     steps:
+#       - name: Set environment variables
+#         run: |
           
-          echo "::set-env name=SHORT_SHA::$(echo ${GITHUB_SHA::7})"
-          echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
-      - name: Concatenate environment varibles
-        run: |
-          echo "::set-env name=IMAGE_TAGS::${SHORT_SHA}"
+#           echo "::set-env name=SHORT_SHA::$(echo ${GITHUB_SHA::7})"
+#           echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+#       - name: Concatenate environment varibles
+#         run: |
+#           echo "::set-env name=IMAGE_TAGS::${SHORT_SHA}"
           
-      - name: Tag latest Docker image
-        # If you want to push to the master branch, you should tag the docker image with the latest in order to be able to see the latest docker image in dockerhub
-        if: env.BRANCH == 'master'
-        run: echo "::set-env name=IMAGE_TAGS::${IMAGE_TAGS},latest"
+#       - name: Tag latest Docker image
+#         # If you want to push to the master branch, you should tag the docker image with the latest in order to be able to see the latest docker image in dockerhub
+#         if: env.BRANCH == 'master'
+#         run: echo "::set-env name=IMAGE_TAGS::${IMAGE_TAGS},latest"
 
         
-      - name: Checkout
-        uses: actions/checkout@v2
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: Build & Publish Docker image
-        uses: whoan/docker-build-with-cache-action@v5
-        with: 
-          username: '${{ secrets.DOCKERHUB_USER}}'
-          password: '${{ secrets.DOCKERHUB_PASS }}'
-          image_name: razieh/vue_meetup_app
-          image_tag: '${{ env.IMAGE_TAGS }}'
+#       - name: Build & Publish Docker image
+#         uses: whoan/docker-build-with-cache-action@v5
+#         with: 
+#           username: '${{ secrets.DOCKERHUB_USER}}'
+#           password: '${{ secrets.DOCKERHUB_PASS }}'
+#           image_name: razieh/vue_meetup_app
+#           image_tag: '${{ env.IMAGE_TAGS }}'
