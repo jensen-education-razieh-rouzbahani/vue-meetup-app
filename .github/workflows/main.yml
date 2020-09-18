@@ -1,4 +1,4 @@
-# name: Test in Docker Container
+name: Test in Docker Container
 
 # on:
 #   push:
