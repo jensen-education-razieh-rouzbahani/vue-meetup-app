@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-toolbar>
-      <v-toolbar-title>Meetup</v-toolbar-title>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">DevMeetup</router-link>
+        </v-toolbar-title>
       <v-toolbar-items>
         <v-btn>View Meetups</v-btn>
       </v-toolbar-items>
@@ -11,7 +13,7 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+
 
 export default {
   name: 'App',
