@@ -9,6 +9,7 @@ COPY package*.json ./
 # install project dependencies
 RUN npm install
 
+# expose port 80
 EXPOSE 8080
 
 CMD [ "npm", "run", "serve" ]
