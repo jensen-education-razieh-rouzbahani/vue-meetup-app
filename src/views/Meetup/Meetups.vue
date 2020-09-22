@@ -46,4 +46,8 @@ computed: {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.font{
+  font-size: 1.5rem !important;
+}
+</style>

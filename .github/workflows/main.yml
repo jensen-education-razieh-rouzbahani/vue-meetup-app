@@ -36,5 +36,5 @@ jobs:
         with: 
           username: '${{ secrets.DOCKERHUB_USER}}'
           password: '${{ secrets.DOCKERHUB_PASS }}'
-          image_name: razieh/vue_meetup_app
+          image_name: razieh4/vue-meetup-app
           image_tag: '${{ env.IMAGE_TAGS }}'

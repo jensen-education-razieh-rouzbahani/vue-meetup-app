@@ -107,6 +107,7 @@ export default {
       },
       submittableDateTime() {
         const date = new Date (this.date)
+        // console.log(date)
         if (typeof this.time === 'string') {
         const hours = this.time.match(/^(\d+)/)[1]
         const minutes = this.time.match(/:(\d+)/)[1]
