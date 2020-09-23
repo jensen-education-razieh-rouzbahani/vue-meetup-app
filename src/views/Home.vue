@@ -50,9 +50,7 @@
     <v-col xs12 sm6 class="text-center">
       <p>Join Our Awesome Meetups!</p>
     </v-col>
-
   </v-row>
-
 </v-container>
 </template>
 
