@@ -34,10 +34,6 @@ jobs:
           else
             docker build . --file Dockerfile
           fi
-<<<<<<< HEAD
-=======
-
->>>>>>> eaa8febe02b07cd83c2ba8a6a20747449c43aa30
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
