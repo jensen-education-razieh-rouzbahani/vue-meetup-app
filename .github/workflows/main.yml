@@ -19,6 +19,6 @@ jobs:
             HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
             HEROKU_APP_NAME: "your-app-name-here"
           if: github.ref == 'refs/heads/master' && job.status == 'success'
-          run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$vue-meetup-app.git origin/master:master  
+          run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$heroku-vue-meetup-app.git origin/master:master  
         
    
